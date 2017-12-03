@@ -1,0 +1,5 @@
+packages
+/Library/bin
+/.vs
+/Library/obj/Debug
+/Library/Library.csproj.user
