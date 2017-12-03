@@ -9,20 +9,20 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <EntityType Name="Book">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nchar" MaxLength="30" Nullable="false" />
           <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="AuthorId" Type="int" Nullable="false" />
+          <Property Name="AuthorId" Type="int" />
         </EntityType>
         <Association Name="FK_Book_Author">
-          <End Role="Author" Type="Self.Author" Multiplicity="1" />
+          <End Role="Author" Type="Self.Author" Multiplicity="0..1" />
           <End Role="Book" Type="Self.Book" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Author">
@@ -68,11 +68,11 @@
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
           <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="AuthorId" Type="Int32" Nullable="false" />
+          <Property Name="AuthorId" Type="Int32" />
           <NavigationProperty Name="Author" Relationship="LibraryModel.FK_Book_Author" FromRole="Book" ToRole="Author" />
         </EntityType>
         <Association Name="FK_Book_Author">
-          <End Type="LibraryModel.Author" Role="Author" Multiplicity="1" />
+          <End Type="LibraryModel.Author" Role="Author" Multiplicity="0..1" />
           <End Type="LibraryModel.Book" Role="Book" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Author">

@@ -17,7 +17,7 @@ namespace Entity
         public int Id { get; set; }
         public string Name { get; set; }
         public System.DateTime CreatedAt { get; set; }
-        public int AuthorId { get; set; }
+        public Nullable<int> AuthorId { get; set; }
     
         public virtual Author Author { get; set; }
     }
