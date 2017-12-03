@@ -3,3 +3,6 @@ packages
 /.vs
 /Library/obj/Debug
 /Library/Library.csproj.user
+/Business/obj/Debug
+/Entity/bin/Debug
+/Entity/obj/Debug
