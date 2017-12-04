@@ -98,6 +98,7 @@
       <LastGenOutput>LibraryModel.Context.cs</LastGenOutput>
       <DependentUpon>LibraryModel.edmx</DependentUpon>
     </Content>
+    <Content Include="LibraryModel.edmx.sql" />
     <Content Include="LibraryModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>LibraryModel.edmx</DependentUpon>

@@ -21,7 +21,7 @@ namespace Business
 
         public IEnumerable <BookModel> Get()
         {
-            var books = _context.Books.AsQueryable().ProjectTo<BookModel>();
+            var books = _context.Books.AsQueryable().ProjectTo<BookModel>().ToList();
             return books;
         }
 
