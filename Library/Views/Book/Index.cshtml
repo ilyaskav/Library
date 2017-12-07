@@ -18,7 +18,7 @@
                     {
                         <tr>
                             <td>@book.Id</td>
-                            <td>@book.Name</td>
+                            <td><a href="#" ng-click="showEditBookSection()">@book.Name</a></td>
                             <td>@book.Author</td>
                         </tr>
                     }
@@ -64,8 +64,8 @@
                         <input type="text" class="form-control" ng-model="book.author" id="bookAuthor" placeholder="Author">
                     </div>
                     <div class="form-group pull-right">
-                        <input type="reset" value="Cancel" class="btn btn-danger" />
-                        <button class="btn btn-success">Update</button>
+                        <input type="reset" value="Cancel" class="btn btn-danger" ng-click="cancel()"/>
+                        <button class="btn btn-success" ng-disabled="!editBookForm.$valid">Update</button>
                     </div>
                 </form>
             </div>
