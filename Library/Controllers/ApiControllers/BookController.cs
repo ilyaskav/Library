@@ -30,5 +30,23 @@ namespace Library.Controllers.ApiControllers
 
             return Ok(isCreated);
         }
+
+        public IHttpActionResult Put (BookModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            bool isUpdated = _bookManager.UpdateBook(model);
+
+            return Ok(isUpdated);
+        }
+
+        public IHttpActionResult Delete([FromUri] int id)
+        {
+            bool isDeleted = _bookManager.DeleteBook(id);
+
+            return Ok(isDeleted);
+        }
     }
 }

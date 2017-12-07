@@ -1,0 +1,21 @@
+﻿<section id="addBook" ng-if="action==='add'">
+    <h3>Create a Book</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <form name="createBookForm" ng-submit="createBook()" novalidate>
+                <div class="form-group">
+                    <label for="bookName">Book Name</label>
+                    <input type="text" class="form-control" ng-model="book.Name" id="bookName" placeholder="Book" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookAuthor">Book Author</label>
+                    <input type="text" class="form-control" ng-model="book.Author.Name" id="bookAuthor" placeholder="Author">
+                </div>
+                <div class="form-group pull-right">
+                    <input type="reset" value="Cancel" class="btn btn-danger" ng-click="cancel()" />
+                    <button class="btn btn-success" ng-disabled="!createBookForm.$valid">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

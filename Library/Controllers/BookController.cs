@@ -15,8 +15,7 @@ namespace Library.Controllers
         // GET: Book
         public ActionResult Index()
         {
-            var books = _bookManager.Get();
-            return View(books);
+            return View();
         }
     }
 }

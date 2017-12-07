@@ -8,29 +8,24 @@ namespace Business
     {
         public EntityMapper()
         {
-            CreateMap<Book, BookModel>()
-                .ForMember(dest => dest.Author, map => map.MapFrom(src => src.Author.Name));
-
+            CreateMap<Book, BookModel>();
             CreateMap<BookModel, Book>()
-                .ForMember(dest => dest.Author, opt => opt.Ignore())
-                .AfterMap((src, dest) =>
-                {
-                    dest.Author = new Author() { Name = src.Author };
-                });
+                .ForMember(dest => dest.Author, opt => opt.Ignore());
+
+            CreateMap<Author, AuthorModel>()
+                .ReverseMap();
         }
 
         public static IMapper GetMapper()
         {
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<Book, BookModel>()
-                    .ForMember(dest => dest.Author, map => map.MapFrom(src => src.Author.Name));
+                cfg.CreateMap<Book, BookModel>();
                 cfg.CreateMap<BookModel, Book>()
-                    .ForMember(dest => dest.Author, opt => opt.Ignore())
-                    .AfterMap((src, dest) =>
-                    {
-                        dest.Author = new Author() { Name = src.Author };
-                    });
+                    .ForMember(dest => dest.Author, opt => opt.Ignore());
+
+                cfg.CreateMap<Author, AuthorModel>()
+                .ReverseMap();
             });
 
             return config.CreateMapper();
@@ -45,8 +40,6 @@ namespace Business
             {
                 x.AddProfile<EntityMapper>();
             });
-
-            //Mapper.Configuration.AssertConfigurationIsValid();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Business.ViewModels
         [Required]
         public string Name { get; set; }
 
-        public string Author { get; set; }
+        public AuthorModel Author { get; set; }
 
         public DateTime CreatedAt { get; set; }
     }
