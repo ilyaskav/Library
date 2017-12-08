@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="728821d654f747c69e74c40517852490" Name="Diagram1">
         <EntityTypeShape EntityType="LibraryModel.Author" Width="1.5" PointX="0.75" PointY="1.125" />
-        <EntityTypeShape EntityType="LibraryModel.Book" Width="1.5" PointX="3.25" PointY="0.5" />
+        <EntityTypeShape EntityType="LibraryModel.Book" Width="1.5" PointX="3" PointY="0.875" />
         <AssociationConnector Association="LibraryModel.FK_Book_Author" />
       </Diagram>
     </edmx:Diagrams>
